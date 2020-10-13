@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+  <head>
+    <title>Web development</title>
+    <style>
+      body, html {
+        height: 100%;
+      }
+      body {
+        margin: 0;
+      }
+      .topnavbar {
+        background-color:silver;
+        height: 50px;
+        top: 0;
+        width: 100%;
+        position: fixed;
+        left: 0;
+      }
+      #container {
+        top: 50px;
+        position: absolute;
+        display: flex;
+        flex-direction: row;
+        height: calc(100% - 50px);
+      }
+      .content {
+        padding: 20px;
+      }
+      .topnavbar > a {
+        float: right;
+        display: block;
+        color:black;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+      }
+      ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        width: 300px;
+        background-color:cornsilk;
+        height: 100%;
+        overflow: auto;
+      }
+      li > a {
+        display: block;
+        color: #000;
+        padding: 8px 16px;
+        text-decoration: none;
+      }
+      #hoverButtonXS {
+        top: 0;
+        position: fixed;
+        height: 50px;
+        line-height: 50px;
+        text-align: center;
+        display: none;
+      }
+      #hoverButtonMD {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      #hoverButtonXS, #hoverButtonMD {
+        width: 100px;
+        color: white;
+        background-color:darkslategrey;
+        cursor: pointer;
+      }
+      #sideBar {
+        width: 300px;
+        display: none;
+      }
+      #hoverButtonXS:hover ~ #sideBar {
+        display:block;
+      }
+      #hoverButtonMD:hover + #sideBar {
+        display:block;
+      }
+      @media (max-width: 600px) {
+        #hoverButtonMD {
+          display: none;
+        }
+        #hoverButtonXS {
+          display: inline-block;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="topnavbar">
+        <a href="javascrip.html">JS</a>
+        <a href="html.html">HTML</a>
+        <a href="css.html">CSS</a>
+        <a href="index.html">Homepage</a>
+    </div>
+    <div id="container">
+      <div id="hoverButtonXS">
+        Click me
+      </div>
+      <div id="hoverButtonMD">
+        Click me
+      </div>
+      <div id="sideBar">
+        <ul>
+            <li><a href="javascrip.html">JS</a></li>
+            <li><a href="html.html">HTML</a></li>
+            <li><a href="css.html">CSS</a></li>
+        </ul>
+      </div>
+      <div class="content">
+        <h2>HOME PAGE</h2>
+        <p>This is Home Page</p>
+      </div>
+    </div>
+  </body>
+</html>
